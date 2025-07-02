@@ -1,4 +1,4 @@
-// Define light and dark themes
+// Defining light and dark themes
 export const lightTheme = {
   colors: {
     primary: '#FF4D4D',
