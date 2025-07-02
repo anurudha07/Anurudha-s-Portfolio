@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './theme';
 import { GlobalStyle } from './globalStyles';
@@ -22,7 +22,7 @@ function Root() {
   return (
     <ThemeProvider theme={themeMode === 'light' ? lightTheme : darkTheme}>
       <GlobalStyle />
-      <BrowserRouter>
+      <HashRouter>
         <App themeMode={themeMode} toggleTheme={toggleTheme} />
       </BrowserRouter>
     </ThemeProvider>
