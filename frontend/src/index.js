@@ -24,7 +24,7 @@ function Root() {
       <GlobalStyle />
       <HashRouter>
         <App themeMode={themeMode} toggleTheme={toggleTheme} />
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   );
 }
