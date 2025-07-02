@@ -5,7 +5,7 @@ import usePrefersReducedMotion from '../hooks/usePrefersReducedMotion';
 
 const Container = styled.section`
   max-width: 800px;
-  margin: 80px auto;
+  margin: 100px auto;
   padding: 0 1rem;
 `;
 const Title = styled.h2`
