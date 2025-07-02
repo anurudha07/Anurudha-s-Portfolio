@@ -4,168 +4,127 @@ import { motion } from 'framer-motion';
 import usePrefersReducedMotion from '../hooks/usePrefersReducedMotion';
 
 const Container = styled.section`
-  max-width: 600px;
+  max-width: 500px;
   margin: 80px auto;
-  padding: 0 1rem;
+  padding: 0 0.75rem;
 `;
 const Title = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
   text-align: center;
+  letter-spacing: 0.5px;
 `;
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
 `;
 const Input = styled.input`
-  padding: 0.75rem;
-  border: none;
-  border-radius: 8px;
+  padding: 0.65rem;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 6px;
   background: ${props => props.theme.colors.cardBg};
-  backdrop-filter: blur(5px);
-  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1);
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.08);
   color: ${props => props.theme.colors.text};
-  transition: box-shadow 0.3s;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
   &:focus {
     outline: none;
-    box-shadow: inset 2px 2px 10px rgba(0,0,0,0.2);
+    border-color: ${props => props.theme.colors.primary};
+    box-shadow: inset 1px 1px 5px rgba(0,0,0,0.1);
   }
 `;
 const Textarea = styled.textarea`
-  padding: 0.75rem;
-  border: none;
-  border-radius: 8px;
+  padding: 0.65rem;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 6px;
   background: ${props => props.theme.colors.cardBg};
-  backdrop-filter: blur(5px);
-  box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1);
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.08);
   color: ${props => props.theme.colors.text};
+  font-size: 0.9rem;
   resize: vertical;
-  transition: box-shadow 0.3s;
+  transition: border-color 0.2s, box-shadow 0.2s;
   &:focus {
     outline: none;
-    box-shadow: inset 2px 2px 10px rgba(0,0,0,0.2);
+    border-color: ${props => props.theme.colors.primary};
+    box-shadow: inset 1px 1px 5px rgba(0,0,0,0.1);
   }
 `;
 const Button = styled.button`
-  padding: 0.75rem;
+  padding: 0.65rem;
   background: ${props => props.theme.colors.primary};
   color: #fff;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: transform 0.2s, background 0.3s;
+  border-radius: 100px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: transform 0.15s ease, background 0.2s;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   &:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px);
     background: ${props => props.theme.colors.accent};
   }
   &:disabled {
-    opacity: 0.6;
+    opacity: 0.7;
     cursor: not-allowed;
     transform: none;
   }
 `;
 const Message = styled.p`
-  /* transient prop $success to avoid DOM prop warning */
-  color: ${props => (props.$success ? '#2ecc71' : '#e74c3c')};
+  color: ${props => (props.$success ? '#27ae60' : '#c0392b')};
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
 `;
 
 const Contact = () => {
   const reduce = usePrefersReducedMotion();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState(null); // { success: bool, msg: string }
+  const [status, setStatus] = useState(null);
   const [sending, setSending] = useState(false);
 
-  const handleChange = e => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
+  const handleChange = e => setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   const isValidEmail = email => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
 
   const handleSubmit = e => {
     e.preventDefault();
     setStatus(null);
-
     const { name, email, message } = formData;
     if (!name.trim() || !email.trim() || !message.trim()) {
-      setStatus({ success: false, msg: 'Please fill in all fields.' });
+      setStatus({ success: false, msg: 'All fields are required.' });
       return;
     }
     if (!isValidEmail(email)) {
-      setStatus({ success: false, msg: 'Please enter a valid email address.' });
+      setStatus({ success: false, msg: 'Invalid email address.' });
       return;
     }
 
-    // Build mailto link
     const to = 'anurudhs567@gmail.com';
-    const subject = encodeURIComponent(`Portfolio Contact from ${name.trim()}`);
-    // Body: include name, email, message
-    const bodyLines = [
-      `Name: ${name.trim()}`,
-      `Email: ${email.trim()}`,
-      '',
-      'Message:',
-      message.trim()
-    ];
-    const body = encodeURIComponent(bodyLines.join('\n'));
+    const subject = encodeURIComponent(`Contact from ${name.trim()}`);
+    const body = encodeURIComponent([`Name: ${name.trim()}`, `Email: ${email.trim()}`, '', message.trim()].join('\n'));
 
-    const mailtoLink = `mailto:${to}?subject=${subject}&body=${body}`;
-
-    // Trigger mail client
     setSending(true);
-    // Small delay to re-enable form after mail client opens
-    window.location.href = mailtoLink;
-    // After redirecting to mail client, we reset state (though user stays in mail client)
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
     setTimeout(() => {
       setSending(false);
       setFormData({ name: '', email: '', message: '' });
-      setStatus({ success: true, msg: 'Mail client opened. Please send the email.' });
+      setStatus({ success: true, msg: 'Mail client opened. Please send.' });
     }, 1000);
   };
 
   return (
     <Container
       as={motion.div}
-      initial={reduce ? {} : { opacity: 0 }}
-      animate={reduce ? {} : { opacity: 1 }}
-      transition={{ duration: 0.6 }}
+      initial={reduce ? {} : { opacity: 0, y: 20 }}
+      animate={reduce ? {} : { opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
     >
-      <Title>Contact</Title>
+      <Title>Get in Touch</Title>
       <Form onSubmit={handleSubmit}>
-        <Input
-          name="name"
-          type="text"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          disabled={sending}
-        />
-        <Input
-          name="email"
-          type="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-          disabled={sending}
-        />
-        <Textarea
-          name="message"
-          rows="5"
-          placeholder="Your Message"
-          value={formData.message}
-          onChange={handleChange}
-          disabled={sending}
-        />
-        <Button type="submit" disabled={sending}>
-          {sending ? 'Opening mail client...' : 'Send Message'}
-        </Button>
+        <Input name="name" type="text" placeholder="Name" value={formData.name} onChange={handleChange} disabled={sending} />
+        <Input name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} disabled={sending} />
+        <Textarea name="message" rows="4" placeholder="Message" value={formData.message} onChange={handleChange} disabled={sending} />
+        <Button type="submit" disabled={sending}>{sending ? 'Opening...' : 'Send Message'}</Button>
       </Form>
       {status && <Message $success={status.success}>{status.msg}</Message>}
     </Container>
