@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './theme';
 import { GlobalStyle } from './globalStyles';
-
 function Root() {
   const [themeMode, setThemeMode] = useState('light');
   useEffect(() => {
