@@ -1,6 +1,12 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import img1 from '../images/image1.jpg';
+import img2 from '../images/image2.jpg';
+import img3 from '../images/image3.jpg';
+import img4 from '../images/image4.jpg';
+import img5 from '../images/image5.jpg';
+import img6 from '../images/image6.jpg';
 
 const Container = styled.section`
   max-width: 1000px;
@@ -8,8 +14,8 @@ const Container = styled.section`
   padding: 0 1rem;
 `;
 const Title = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 1.6rem;
   text-align: center;
 `;
 const Grid = styled.div`
@@ -21,7 +27,7 @@ const Card = styled.div`
   background: ${props => props.theme.colors.cardBg};
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 108px 20px rgba(0,0,0,0.1);
   perspective: 1000px;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -44,7 +50,7 @@ const CardImage = styled.img`
   backface-visibility: hidden;
 `;
 const CardContent = styled.div`
-  padding: 1rem;
+  padding: 1.5rem;
   backface-visibility: hidden;
   display: flex;
   flex-direction: column;
@@ -67,7 +73,7 @@ const LinkButton = styled.a`
   background: ${props => props.theme.colors.primary};
   color: #fff;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-align: center;
   transition: background 0.3s;
   &:hover {
@@ -77,54 +83,48 @@ const LinkButton = styled.a`
 
 const projectList = [
   {
-    title: 'M-Cart | Full-Stack E-Commerce Web Application',
-    description: 'Developed a full-stack e-commerce web application with dynamic catalog management, secure payment processing, and responsive design, leveraging Node.js, React.js, and MongoDB to deliver a seamless user experience.',
-    image: '',
-    github: 'https://github.com/anurudha07/ecommerce',
-    live: ''
+    title: 'ExpenX | Your Expense Tracking Partner',
+    description: '"A mobile‑responsive personal finance dashboard featuring secure JWT‑based authentication, summary cards for balance, income, and expenses, plus full CRUD for income and expense entries with update alerts. It includes interactive Bar, Pie, and Line charts, recent‑transaction previews, Excel exports, and an intuitive sidebar for seamless navigation."',
+    image: img1,
+    github: 'https://github.com/anurudha07/ExpenX',
+    live: 'https://expenx-client.onrender.com'
   },
   {
-    title: 'Kanban-Board-Application',
-    description: 'Built a modern, minimal Kanban board application with Vue.js 3, Express, and MongoDB. Features responsive UI, smooth drag-and-drop task cards, and ability to create, edit & delete tasks.',
-    image: '',
-    github: 'https://github.com/anurudha07/Kanban-Board-Application',
-    live: ''
-  },
-  {
-    title: 'Book-Store-Web-Application',
-    description: 'Developed a full-stack Book Store application leveraging the MERN stack, enabling users to perform CRUD operations with a user-friendly UI.',
-    image: '',
+    title: 'BookShelf | Turning Pages into Next Possibility',
+    description: '"BookShelf is a full-stack, mobile-responsive MERN application for browsing and purchasing books online. It features secure JWT-based authentication with Password Reset via Email, Stripe and RazorPay-powered payments, dynamic book management, real-time cart functionality, Role-Based Access Control and an intuitive admin dashboard—delivering a seamless bookstore experience on any device."',
+    image: img2,
     github: '',
     live: ''
   },
   {
-    title: 'Multi-Disease Predictive Analytics Platform',
-    description: 'Designed a predictive analytics web application using Python and Streamlit, harnessing supervised learning techniques to forecast the likelihood of Heart, Diabetes, Breast Cancer, and Parkinson’s Disease.',
-    image: '',
+    title: 'Kanban-Board-Application | Keep Update Stay Updated',
+    description: 'A minimal Kanban board application with Vue.js 3, Express, and MongoDB. Featureing responsive UI, smooth drag-and-drop task cards functionality, and ability to create, edit & delete tasks at ease with ability to create dynamic sections.',
+    image: img3,
+    github: 'https://github.com/anurudha07/Kanban-Board-Application',
+    live: ''
+  },
+  {
+    title: 'Multi-Disease Predictive Analytics Platform | A way to better lifestyle',
+    description: 'Advanced predictive system build using Python and Streamlit, harnessing supervised learning algorithms to forecast the likelihood of four major disseases- Heart, Diabetes, Breast Cancer, and Parkinson’s Disease.',
+    image: img4,
     github: 'https://github.com/anurudha07/Multi-Disease-Predictive-Analytics-Platform',
     live: ''
   },
   {
     title: 'Hand Gesture-Based Volume Control',
-    description: 'Implemented a cutting-edge Hand Gesture-Based Volume Control system leveraging computer vision and machine learning techniques.',
-    image: '',
+    description: 'Implemented a cutting-edge Hand Gesture-Based Volume Control system utilizing computer vision leveraging OpenCv, MediaPipe, PyAutoGUI libraries to control and maintain volume control at your finger tips.',
+    image: img5,
     github: 'https://github.com/anurudha07/Hand-Gesture-Based-Volume-Control/tree/main',
     live: 'https://anurudha07.github.io/Hand-Gesture-Based-Volume-Control/'
   },
   {
-    title: 'Bank Management System',
-    description: 'Contributed to a group Bank Management System project using Spring Boot, incorporating user authentication and secure transaction processing.',
-    image: '',
+    title: 'Quantum Bank | Bank Management System',
+    description: 'Contributed to a group prject- Bank Management System project build using Spring Boot, incorporating user authentication and secure transaction processing & proper frontend development where i contributed in building the frontend.',
+    image: img6,
     github: 'https://github.com/anurudha07/Bank-Management-System',
     live: ''
   },
-  {
-    title: 'Expense Tracking System',
-    description: '"A full-stack MERN app enabling users to record, view, and manage expenses with real-time updates and calculations. Features include expense listing, total calculation, and deletion, showcasing CRUD operations and state management."',
-    image: '',
-    github: '',
-    live: ''
-  },
+  
 ];
 
 const Projects = () => {
