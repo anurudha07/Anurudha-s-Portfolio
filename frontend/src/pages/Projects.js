@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import img1 from '../images/image1.jpg';
 import img2 from '../images/image2.jpg';
-import img3 from '../images/image3.jpg';
+import img3 from '../images/image3.png';
 import img4 from '../images/image4.jpg';
 import img5 from '../images/image5.jpg';
 import img6 from '../images/image6.jpg';
@@ -84,10 +84,17 @@ const LinkButton = styled.a`
 const projectList = [
   {
     title: 'ExpenX | Your Expense Tracking Partner',
-    description: '"A mobile‑responsive personal finance dashboard featuring secure JWT‑based authentication, summary cards for balance, income, and expenses, plus full CRUD for income and expense entries with update alerts. It includes interactive Bar, Pie, and Line charts, recent‑transaction previews, Excel exports, and an intuitive sidebar for seamless navigation."',
+    description: '"A mobile‑responsive, full stack personal finance dashboard featuring secure JWT‑based authentication, summary cards for balance, income, and expenses, plus full CRUD for income and expense entries with update alerts. It includes interactive Bar, Pie, and Line charts, recent‑transaction previews, Excel exports, and an intuitive sidebar for seamless navigation."',
     image: img1,
     github: 'https://github.com/anurudha07/ExpenX',
     live: 'https://expenx-client.onrender.com'
+  },
+  {
+    title: 'Kanban | Your Personal Productivity Hub',
+    description: 'Kanban is a Full Stack Application- is minimal yet modern and mobile responsive design helps user access at easy across all devices. Leveraging React, Redux, Express, and MongoDB. Featuring responsive UI, smooth drag-and-drop task cards functionality, favourite section and ability to perform CRUD operations in dynamic sections with added font styling and updation in real time.',
+    image: img3,
+    github: 'https://github.com/anurudha07/Kanban',
+    live: 'https://kanban-client-b8bj.onrender.com/'
   },
   {
     title: 'BookShelf | Turning Pages into Next Possibility',
@@ -96,13 +103,7 @@ const projectList = [
     github: '',
     live: ''
   },
-  {
-    title: 'Kanban-Board-Application | Keep Update Stay Updated',
-    description: 'A minimal Kanban board application with Vue.js 3, Express, and MongoDB. Featureing responsive UI, smooth drag-and-drop task cards functionality, and ability to create, edit & delete tasks at ease with ability to create dynamic sections.',
-    image: img3,
-    github: 'https://github.com/anurudha07/Kanban-Board-Application',
-    live: ''
-  },
+  
   {
     title: 'Multi-Disease Predictive Analytics Platform | A way to better lifestyle',
     description: 'Advanced predictive system build using Python and Streamlit, harnessing supervised learning algorithms to forecast the likelihood of four major disseases- Heart, Diabetes, Breast Cancer, and Parkinson’s Disease.',
