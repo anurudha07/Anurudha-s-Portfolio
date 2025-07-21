@@ -1,3 +1,4 @@
+// Navbar.js
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
@@ -42,7 +43,7 @@ const MenuIcon = styled.div`
 // Desktop Menu
 const DesktopMenu = styled.div`
   display: flex;
-  gap: 3.2rem; /* increased gap */
+  gap: 3.2rem;
   align-items: center;
   @media (max-width: ${props => props.theme.breakpoints.tablet}) {
     display: none;
@@ -67,12 +68,6 @@ const DesktopLink = styled(Link)`
   &:hover:after {
     width: 100%;
   }
-  &:focus {
-    outline: none;
-  }
-  &:focus:after {
-    width: 0;
-  }
 `;
 const DesktopHire = styled.a`
   display: flex;
@@ -85,8 +80,8 @@ const DesktopHire = styled.a`
   font-size: 0.85rem;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.2s;
   text-decoration: none;
+  transition: background 0.2s;
   &:hover {
     background: ${props => props.theme.colors.accent};
   }
@@ -117,6 +112,7 @@ const Panel = styled(motion.div)`
   box-shadow: -3px 0 20px rgba(0,0,0,0.2);
   border-radius: 0 0 0 6px;
   z-index: 1000;
+  will-change: transform; /* hint for smoother animations */
 `;
 const CloseIconWrapper = styled.div`
   align-self: flex-end;
@@ -149,10 +145,6 @@ const NavLinkStyled = styled(Link)`
   &:hover {
     background: ${props => props.theme.colors.hoverBg};
     color: ${props => props.theme.colors.primary};
-  }
-  &:focus {
-    text-decoration: none;
-    outline: none;
   }
 `;
 const HireButton = styled.a`
@@ -229,26 +221,38 @@ const Navbar = ({ themeMode, toggleTheme }) => {
         </NavContainer>
       </Nav>
 
-      <AnimatePresence>
+      <AnimatePresence initial={false} mode="wait">
         {open && (
-          <>
-            <Overlay onClick={toggle} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}/> 
-            <Panel initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+          <> 
+            <Overlay
+              onClick={toggle}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
+            />
+            <Panel
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', stiffness: 120, damping: 20 }}
+            >
               <CloseIconWrapper onClick={toggle}>&times;</CloseIconWrapper>
               <NavMenu>
                 {links.map(({ to, label, icon }) => (
                   <NavItem key={to}>
-                    <NavLinkStyled to={to} onClick={toggle}>{icon} {label}</NavLinkStyled>
+                    <NavLinkStyled to={to} onClick={toggle}>
+                      {icon} {label}
+                    </NavLinkStyled>
                   </NavItem>
                 ))}
               </NavMenu>
               <BottomActions>
                 <ThemeToggle theme={themeMode} toggleTheme={toggleTheme} />
                 <HireButton href={mailto} onClick={handleHireClick}>
-                   <FaEnvelope size={16} /> {hireText}
+                  <FaEnvelope size={16} /> {hireText}
                 </HireButton>
               </BottomActions>
-
             </Panel>
           </>
         )}
