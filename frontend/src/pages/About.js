@@ -21,7 +21,7 @@ const About = () => {
     >
       <Title variants={titleVariants}>{'About Me'}</Title>
       <Content variants={contentVariants}>
-        I am an effective Full-Stack Developer specializing in the MERN stack with passion for performance-oriented scalable systems. I build full stack applications with clean architecture, advanced animations, leveraging both frontend and backend. As a detail-oriented and analytical individual, I excel in problem-solving and my excellent communication enable me to effectively collaborate with teams and communicate complex ideas to diverse audiences.
+        I am Full-Stack Developer specializing in the MERN stack with passion for performance-oriented scalable systems. I build full stack applications with clean architecture, advanced animations, leveraging both frontend and backend. As a detail-oriented and analytical individual, I excel in problem-solving and my excellent communication enable me to effectively collaborate with teams and communicate complex ideas to diverse audiences.
       </Content>
       <ButtonContainer variants={contentVariants}>
         <DownloadButton
