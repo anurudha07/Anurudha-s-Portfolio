@@ -98,10 +98,10 @@ const projectList = [
   },
   {
     title: 'BookShelf | Turning Pages into Next Possibility',
-    description: '"BookShelf is a full-stack, mobile-responsive MERN application for browsing and purchasing books online. It features secure JWT-based authentication with Password Reset via Email, Stripe and RazorPay-powered payments, dynamic book management, real-time cart functionality, Role-Based Access Control and an intuitive admin dashboard—delivering a seamless bookstore experience on any device."',
+    description: '"BookShelf is a full-stack, minimalistic MERN application for browsing and purchasing books online. It features secure JWT-based authentication, Paypal-powered payments, dynamic book management, real-time cart functionality, Role-Based Access Control and an intuitive admin dashboard—delivering a seamless bookstore experience on any device."',
     image: img2,
-    github: '',
-    live: ''
+    github: 'https://github.com/anurudha07/BookShelf/tree/master',
+    live: 'https://bookshelf-aeyu.onrender.com'
   },
   
   {
