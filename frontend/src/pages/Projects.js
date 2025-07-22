@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import img1 from '../images/image1.jpg';
-import img2 from '../images/image2.jpg';
+import img2 from '../images/image2.jpeg';
 import img3 from '../images/image3.png';
 import img4 from '../images/image4.jpg';
 import img5 from '../images/image5.jpg';
@@ -87,7 +87,7 @@ const projectList = [
     description: '"BookShelf is a full-stack, minimalistic MERN application for browsing and purchasing books online. It features secure JWT-based authentication, Paypal-powered payments, dynamic book management, real-time cart functionality, Role-Based Access Control and an intuitive admin dashboard—delivering a seamless bookstore experience on any device."',
     image: img2,
     github: 'https://github.com/anurudha07/BookShelf/tree/master',
-    live: 'https://bookshelf-server-k188.onrender.com'
+    live: 'https://bookshelf-server-k188.onrender.com/'
   },
   {
     title: 'ExpenX | Your Expense Tracking Partner',
