@@ -83,6 +83,13 @@ const LinkButton = styled.a`
 
 const projectList = [
   {
+    title: 'BookShelf | Turning Pages into Next Possibility',
+    description: '"BookShelf is a full-stack, minimalistic MERN application for browsing and purchasing books online. It features secure JWT-based authentication, Paypal-powered payments, dynamic book management, real-time cart functionality, Role-Based Access Control and an intuitive admin dashboard—delivering a seamless bookstore experience on any device."',
+    image: img2,
+    github: 'https://github.com/anurudha07/BookShelf/tree/master',
+    live: 'https://bookshelf-server-k188.onrender.com'
+  },
+  {
     title: 'ExpenX | Your Expense Tracking Partner',
     description: '"A mobile‑responsive, full stack personal finance dashboard featuring secure JWT‑based authentication, summary cards for balance, income, and expenses, plus full CRUD for income and expense entries with update alerts. It includes interactive Bar, Pie, and Line charts, recent‑transaction previews, Excel exports, and an intuitive sidebar for seamless navigation."',
     image: img1,
@@ -96,13 +103,7 @@ const projectList = [
     github: 'https://github.com/anurudha07/Kanban',
     live: 'https://kanban-client-b8bj.onrender.com/'
   },
-  {
-    title: 'BookShelf | Turning Pages into Next Possibility',
-    description: '"BookShelf is a full-stack, minimalistic MERN application for browsing and purchasing books online. It features secure JWT-based authentication, Paypal-powered payments, dynamic book management, real-time cart functionality, Role-Based Access Control and an intuitive admin dashboard—delivering a seamless bookstore experience on any device."',
-    image: img2,
-    github: 'https://github.com/anurudha07/BookShelf/tree/master',
-    live: 'https://bookshelf-server-k188.onrender.com'
-  },
+  
   
   {
     title: 'Multi-Disease Predictive Analytics Platform | A way to better lifestyle',
