@@ -16,7 +16,7 @@ const IconLink = styled(motion.a)`
   color: ${props => props.theme.colors.text};
 `;
 const icons = [
-  { comp: FaGithub, url: 'https://github.com/anurudha07?tab=repositories' },
+  { comp: FaGithub, url: 'https://github.com/anurudha07' },
   { comp: FaLinkedin, url: 'https://www.linkedin.com/in/anurudha-sarkar-3b77ab228/' },
   { comp: FaInstagram, url: 'https://www.instagram.com/_anurudha_/' }
 ];
