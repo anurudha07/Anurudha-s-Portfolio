@@ -10,7 +10,7 @@ const SkillCard = styled(motion.div)`background:${(props:any) => props.theme.col
 
 const LogoWrapper = styled(motion.div)`width:84px;height:84px;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;color:${(props:any)=>props.theme?.colors?.accent || '#6C5CE7'};`;
 
-const skills = ['React.js','Node','Next','MongoDB','Vue.js','HTML5','CSS3','Git','REST APIs','Redux','JavaScript','MySQL'];
+const skills = ['React.js','Node','Next','MongoDB','TailwindCSS','HTML5','Git','REST APIs','Redux','Postman','JavaScript','MySQL'];
 const containerVariants = { hidden:{}, visible:{ transition:{ staggerChildren:0.1 } } };
 const itemVariants = { hidden:{ opacity:0,y:20,scale:0.9 }, visible:{ opacity:1,y:0,scale:1,transition:{ type:'spring',stiffness:300,damping:20 } } };
 
@@ -57,3 +57,4 @@ const Skills: React.FC = () => {
 };
 
 export default Skills;
+
