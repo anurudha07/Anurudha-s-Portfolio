@@ -84,21 +84,21 @@ const LinkButton = styled.a`
 const projectList = [
   {
     title: 'BookShelf | Turning Pages into Next Possibility',
-    description: '"BookShelf is a full-stack, minimalistic MERN application for browsing and purchasing books online. It features secure JWT-based authentication, Paypal-powered payments, dynamic book management, real-time cart functionality, Role-Based Access Control and an intuitive admin dashboard—delivering a seamless bookstore experience on any device."',
+    description: '"BookShelf is a full-stack, minimalistic application for browsing and purchasing books online. It features security with JWT-based authentication, Paypal-powered payments, dynamic book management, real-time cart functionality, Role-Based Access Control and an intuitive admin dashboard—delivering seamless bookstore experience across devices."',
     image: img2,
     github: 'https://github.com/anurudha07/BookShelf/tree/master',
     live: 'https://bookshelf-server-k188.onrender.com/'
   },
   {
     title: 'ExpenX | Your Expense Tracking Partner',
-    description: '"A mobile‑responsive, full stack personal finance dashboard featuring secure JWT‑based authentication, summary cards for balance, income, and expenses, plus full CRUD for income and expense entries with update alerts. It includes interactive Bar, Pie, and Line charts, recent‑transaction previews, Excel exports, and an intuitive sidebar for seamless navigation."',
+    description: '"A mobile‑responsive, full stack personal finance dashboard featuring JWT‑based secureed authentication, summary cards for balance, income, and expenses, plus full CRUD for income and expense entries with update alerts. It includes interactive Bar, Pie, and Line charts, recent‑transaction previews, Excel exports, and an intuitive sidebar for seamless navigation."',
     image: img1,
     github: 'https://github.com/anurudha07/ExpenX',
     live: 'https://expenx-client.onrender.com'
   },
   {
     title: 'Kanban | Your Personal Productivity Hub',
-    description: 'Kanban is a Full Stack Application- is minimal yet modern and mobile responsive design helps user access at easy across all devices. Leveraging React, Redux, Express, and MongoDB. Featuring responsive UI, smooth drag-and-drop task cards functionality, favourite section and ability to perform CRUD operations in dynamic sections with added font styling and updation in real time.',
+    description: 'Kanban is a Full Stack Application- is minimal yet modern and mobile responsive design helps user access at easy across all devices. Leveraging React, Redux, Node, and MongoDB. Featuring responsive UI, smooth drag-and-drop task cards functionality, favourite section and ability to perform CRUD operations in dynamic sections with added font styling and updation in real time.',
     image: img3,
     github: 'https://github.com/anurudha07/Kanban',
     live: 'https://kanban-client-b8bj.onrender.com/'
@@ -193,3 +193,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
