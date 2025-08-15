@@ -84,9 +84,7 @@ const LinkButton = styled.a`
 const projectList = [
   {
     title: 'BookShelf | Turning Pages into Next Possibility',
-    description: '"BookShelf | Turning Pages into Next Possibility
-
-A full-stack bookstore application for browsing and purchasing books online.
+    description: A full-stack bookstore application for browsing and purchasing books online.
 Key Features:
 
 JWT-based authentication & Role-Based Access Control (RBAC).
@@ -205,5 +203,6 @@ const Projects = () => {
 };
 
 export default Projects;
+
 
 
