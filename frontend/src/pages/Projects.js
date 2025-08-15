@@ -84,17 +84,7 @@ const LinkButton = styled.a`
 const projectList = [
   {
     title: 'BookShelf | Turning Pages into Next Possibility',
-    description: A full-stack bookstore application for browsing and purchasing books online.
-Key Features:
-
-JWT-based authentication & Role-Based Access Control (RBAC).
-
-PayPal-powered secure payment gateway with order verification.
-
-Real-time cart management & intuitive admin dashboard.
-
-Mobile-responsive design for seamless cross-device experience.
-Tech: React, Node.js, Express, MongoDB, JWT, PayPal API"',
+    description: '"BookShelf is a full-stack, minimalistic application for browsing and purchasing books online. It features security with JWT-based authentication, Paypal-powered payments, dynamic book management, real-time cart functionality, Role-Based Access Control and an intuitive admin dashboard—delivering seamless bookstore experience across devices."',
     image: img2,
     github: 'https://github.com/anurudha07/BookShelf/tree/master',
     live: 'https://bookshelf-server-k188.onrender.com/'
@@ -203,6 +193,7 @@ const Projects = () => {
 };
 
 export default Projects;
+
 
 
 
