@@ -8,6 +8,15 @@ import img4 from '../images/image4.jpg';
 import img5 from '../images/image5.jpg';
 import img6 from '../images/image6.jpg';
 
+const Note = styled.p`
+  text-align: center;
+  font-size: 0.9rem;
+  color: ${props => props.theme.colors.subtext};
+  margin-bottom: 1rem;
+  font-style: italic;
+`;
+
+
 const Container = styled.section`
   max-width: 1000px;
   margin: 80px auto;
@@ -95,10 +104,10 @@ const projectList = [
   {
     title: 'BookShelf | Turning Pages into Next Possibility',
     bullets: [
-      'Full-stack MERN bookstore with JWT-based authentication and Role-Based Access Control.',
-      'Cart & checkout flow with PayPal integration and secure client/server payment verification.',
-      'Admin dashboard for product, user & order CRUD; faceted search and server-side pagination.',
-      'Mobile-first responsive UI; deployed frontend & backend on Render.'
+      'Full-stack E-store featuring product listings, cart, and checkout flows ',
+      'Implemented JWT-based authentication and Role-Based Access Control.',
+      'Cart & checkout flow with PayPal integration and secured client - server payment verification.',
+      'Admin dashboard for product, user & order -CRUD; faceted search and pagination.'
     ],
     image: img2,
     github: 'https://github.com/anurudha07/BookShelf/tree/master',
@@ -107,10 +116,10 @@ const projectList = [
   {
     title: 'ExpenX | Your Expense Tracking Partner',
     bullets: [
-      'Mobile-responsive finance dashboard with secure JWT authentication.',
+      'Mobile-responsive finance management with secure JWT authentication.',
       'Full CRUD for incomes & expenses; summary cards for balance, income, and expenses.',
       'Interactive charts (Bar, Pie, Line) using Recharts and Excel export via SheetJS.',
-      'Recent-transaction previews, update alerts, and easy deployment configuration.'
+      'Recent-transaction previews, update alerts, and ease of use for effective insights.'
     ],
     image: img1,
     github: 'https://github.com/anurudha07/ExpenX',
@@ -120,31 +129,33 @@ const projectList = [
   {
     title: 'Kanban | Your Personal Productivity Hub',
     bullets: [
-      'Full-stack Kanban board using React + Redux and Node.js + Express + MongoDB.',
-      'Drag-and-drop task & section management, inline editing, favorites, and rich descriptions.',
+      'Full-stack Kanban board featuring dynamic board, section, and task management.',
+      'Drag-and-drop task & section management, inline editing, favorites 🖤, and rich descriptions.',
       'Responsive UI with Material-UI and optimized API endpoints for low-latency interactions.',
-      'Deployed on Render (client + server).'
+      'Implemented security with JWT based authentcation.'
     ],
     image: img3,
     github: 'https://github.com/anurudha07/Kanban',
     live: 'https://kanban-client-b8bj.onrender.com/'
   },
   {
-    title: 'Multi-Disease Predictive Analytics Platform | A way to better lifestyle',
+    title: 'Healthify | Multi-Disease Predictive Analytics Platform',
     bullets: [
       'ML-based predictive system for Heart, Diabetes, Breast Cancer, and Parkinson’s disease.',
       'Built supervised learning models and deployed a Streamlit UI for interactive predictions.',
-      'Focus on data preprocessing, model evaluation, and clear result presentation.'
+      'Focus on data preprocessing, model evaluation, and clear result presentation.',
+      'Implemented accuracy benchmarking to 80-85% accuracy for best performance.'
     ],
     image: img4,
     github: 'https://github.com/anurudha07/Multi-Disease-Predictive-Analytics-Platform',
     live: ''
   },
   {
-    title: 'Hand Gesture-Based Volume Control',
+    title: 'VolumeStd | Hand Gesture-Based Volume Control',
     bullets: [
-      'Computer-vision system using OpenCV and MediaPipe for real-time hand gesture detection.',
-      'Mapped gestures to volume controls via PyAutoGUI for hands-free desktop control.',
+      'Computer-vision system build using OpenCV and MediaPipe for real-time hand gesture detection.',
+      'Implemented real-time hand landmark detection to identify thumb and index fingertips.',
+      'Mapped fingertip distance to volume levels for intuitive user interaction.',
       'Prototype demonstrates reliable detection and smooth control on test systems.'
     ],
     image: img5,
@@ -155,8 +166,9 @@ const projectList = [
     title: 'Quantum Bank | Bank Management System',
     bullets: [
       'Group project built with Spring Boot featuring user authentication and secure transactions.',
-      'Contributed primarily to frontend implementation and UI flows for account management.',
-      'Focused on secure transaction processing and clean, reusable frontend components.'
+      'Contributed primarily to frontend implementation and UI flows for management system.',
+      'Focused on secure transaction processing and clean and modern UI for consumer ease.',
+      'Implemented MySQL database with optimized queries for high-performance data handling.'
     ],
     image: img6,
     github: 'https://github.com/anurudha07/Bank-Management-System',
@@ -189,6 +201,10 @@ const Projects = () => {
   return (
     <Container>
       <Title>Projects</Title>
+      <Note>
+        #Note: Projects are hosted on Render free tier, which may take up to 50 seconds
+        to load initially due to server cold start.
+      </Note>
       <Grid>
         {projectList.map((proj, idx) => (
           <Card
