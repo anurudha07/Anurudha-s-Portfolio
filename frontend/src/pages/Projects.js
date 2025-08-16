@@ -60,9 +60,19 @@ const ProjectTitle = styled.h3`
   color: ${props => props.theme.colors.primary};
 `;
 const Description = styled.p`
-  flex-grow: 1;
+  /* kept for optional single-line descriptions */
   color: ${props => props.theme.colors.subtext};
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
+`;
+const BulletList = styled.ul`
+  margin: 0.4rem 0 1rem 1rem;
+  padding: 0;
+  color: ${props => props.theme.colors.subtext};
+  list-style: disc;
+`;
+const BulletItem = styled.li`
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
 `;
 const Links = styled.div`
   display: flex;
@@ -84,49 +94,74 @@ const LinkButton = styled.a`
 const projectList = [
   {
     title: 'BookShelf | Turning Pages into Next Possibility',
-    description: '"BookShelf is a full-stack, minimalistic application for browsing and purchasing books online. It features security with JWT-based authentication, Paypal-powered payments, dynamic book management, real-time cart functionality, Role-Based Access Control and an intuitive admin dashboard—delivering seamless bookstore experience across devices."',
+    bullets: [
+      'Full-stack MERN bookstore with JWT-based authentication and Role-Based Access Control.',
+      'Cart & checkout flow with PayPal integration and secure client/server payment verification.',
+      'Admin dashboard for product, user & order CRUD; faceted search and server-side pagination.',
+      'Mobile-first responsive UI; deployed frontend & backend on Render.'
+    ],
     image: img2,
     github: 'https://github.com/anurudha07/BookShelf/tree/master',
     live: 'https://bookshelf-server-k188.onrender.com/'
   },
   {
     title: 'ExpenX | Your Expense Tracking Partner',
-    description: '"A mobile‑responsive, full stack personal finance dashboard featuring JWT‑based secureed authentication, summary cards for balance, income, and expenses, plus full CRUD for income and expense entries with update alerts. It includes interactive Bar, Pie, and Line charts, recent‑transaction previews, Excel exports, and an intuitive sidebar for seamless navigation."',
+    bullets: [
+      'Mobile-responsive finance dashboard with secure JWT authentication.',
+      'Full CRUD for incomes & expenses; summary cards for balance, income, and expenses.',
+      'Interactive charts (Bar, Pie, Line) using Recharts and Excel export via SheetJS.',
+      'Recent-transaction previews, update alerts, and easy deployment configuration.'
+    ],
     image: img1,
     github: 'https://github.com/anurudha07/ExpenX',
-    live: 'https://expenx-client.onrender.com'
+    live: 'https://expenx-client.onrender.com',
+    // if you later add a local video: video: '/videos/expenx-demo.mp4'
   },
   {
     title: 'Kanban | Your Personal Productivity Hub',
-    description: 'Kanban is a Full Stack Application- is minimal yet modern and mobile responsive design helps user access at easy across all devices. Leveraging React, Redux, Node, and MongoDB. Featuring responsive UI, smooth drag-and-drop task cards functionality, favourite section and ability to perform CRUD operations in dynamic sections with added font styling and updation in real time.',
+    bullets: [
+      'Full-stack Kanban board using React + Redux and Node.js + Express + MongoDB.',
+      'Drag-and-drop task & section management, inline editing, favorites, and rich descriptions.',
+      'Responsive UI with Material-UI and optimized API endpoints for low-latency interactions.',
+      'Deployed on Render (client + server).'
+    ],
     image: img3,
     github: 'https://github.com/anurudha07/Kanban',
     live: 'https://kanban-client-b8bj.onrender.com/'
   },
-  
-  
   {
     title: 'Multi-Disease Predictive Analytics Platform | A way to better lifestyle',
-    description: 'Advanced predictive system build using Python and Streamlit, harnessing supervised learning algorithms to forecast the likelihood of four major disseases- Heart, Diabetes, Breast Cancer, and Parkinson’s Disease.',
+    bullets: [
+      'ML-based predictive system for Heart, Diabetes, Breast Cancer, and Parkinson’s disease.',
+      'Built supervised learning models and deployed a Streamlit UI for interactive predictions.',
+      'Focus on data preprocessing, model evaluation, and clear result presentation.'
+    ],
     image: img4,
     github: 'https://github.com/anurudha07/Multi-Disease-Predictive-Analytics-Platform',
     live: ''
   },
   {
     title: 'Hand Gesture-Based Volume Control',
-    description: 'Implemented a cutting-edge Hand Gesture-Based Volume Control system utilizing computer vision leveraging OpenCv, MediaPipe, PyAutoGUI libraries to control and maintain volume control at your finger tips.',
+    bullets: [
+      'Computer-vision system using OpenCV and MediaPipe for real-time hand gesture detection.',
+      'Mapped gestures to volume controls via PyAutoGUI for hands-free desktop control.',
+      'Prototype demonstrates reliable detection and smooth control on test systems.'
+    ],
     image: img5,
     github: 'https://github.com/anurudha07/Hand-Gesture-Based-Volume-Control/tree/main',
     live: 'https://anurudha07.github.io/Hand-Gesture-Based-Volume-Control/'
   },
   {
     title: 'Quantum Bank | Bank Management System',
-    description: 'Contributed to a group prject- Bank Management System project build using Spring Boot, incorporating user authentication and secure transaction processing & proper frontend development where i contributed in building the frontend.',
+    bullets: [
+      'Group project built with Spring Boot featuring user authentication and secure transactions.',
+      'Contributed primarily to frontend implementation and UI flows for account management.',
+      'Focused on secure transaction processing and clean, reusable frontend components.'
+    ],
     image: img6,
     github: 'https://github.com/anurudha07/Bank-Management-System',
     live: ''
   },
-  
 ];
 
 const Projects = () => {
@@ -170,7 +205,18 @@ const Projects = () => {
               )}
               <CardContent>
                 <ProjectTitle>{proj.title}</ProjectTitle>
-                <Description>{proj.description}</Description>
+
+                {/* Render bullets if available, otherwise fallback to paragraph */}
+                {proj.bullets && proj.bullets.length > 0 ? (
+                  <BulletList>
+                    {proj.bullets.map((b, i) => (
+                      <BulletItem key={i}>{b}</BulletItem>
+                    ))}
+                  </BulletList>
+                ) : (
+                  <Description>{proj.description}</Description>
+                )}
+
                 <Links>
                   {proj.github && (
                     <LinkButton href={proj.github} target="_blank" rel="noopener noreferrer">
@@ -193,7 +239,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-
-
-
