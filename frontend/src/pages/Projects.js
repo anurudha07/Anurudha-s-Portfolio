@@ -7,6 +7,8 @@ import img3 from '../images/image3.png';
 import img4 from '../images/image4.jpg';
 import img5 from '../images/image5.jpg';
 import img6 from '../images/image6.jpg';
+import img7 from '../images/image7.png';
+import img8 from '../images/image8.png';
 
 const Note = styled.p`
   text-align: center;
@@ -102,6 +104,18 @@ const LinkButton = styled.a`
 
 const projectList = [
   {
+    title: 'NodeNest | Modern Multi-Vendor Ecommerce',
+    bullets: [
+      'Microservices production-ready flows — auth, product, seller, orders, payments. ',
+      'Event-driven & real-time: Kafka + Redis power async workflows; WebSockets deliver live analytics.',
+      'Stripe powered payouts and ImageKit — image uploads; role-based auth (JWT); User, Seller, Admin.',
+      'Dockerized with CI/CD deployment.'
+    ],
+    image: img7,
+    github: 'https://github.com/anurudha07/NodeNest',
+    
+  },
+  {
     title: 'BookShelf | Turning Pages into Next Possibility',
     bullets: [
       'Full-stack E-store featuring product listings, cart, and checkout flows ',
@@ -137,6 +151,18 @@ const projectList = [
     image: img3,
     github: 'https://github.com/anurudha07/Kanban',
     live: 'https://kanban-client-b8bj.onrender.com/'
+  },
+  {
+    title: 'Noted | Minimal & focused Note Taking',
+    bullets: [
+      'Full-stack Note App captures notes instantly with a minimal, fast interface. ',
+      'Designed mobile-first with a responsive dark UI and consistent sidebar.',
+      'Secured your notes with JWT-based authentication powered with Node backend & Next frontend.',
+      'Edit distraction-free in a modal; perform CRUD at ease.'
+    ],
+    image: img8,
+    github: 'https://github.com/anurudha07/Noted',
+    live: 'https://noted-5ahw.onrender.com/'
   },
   {
     title: 'Healthify | Multi-Disease Predictive Analytics Platform',
